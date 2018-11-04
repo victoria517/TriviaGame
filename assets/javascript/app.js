@@ -24,6 +24,9 @@ $("#startClock").click(function(){
           span = document.getElementById("startClock");
           span.innerHTML = counter;
        }
+       if (counter < 1) {
+           document.getElementById("after_submit").style.visibility = "visible";
+       }
       }, 1000);
     })
 
@@ -46,7 +49,6 @@ $("#startClock").click(function(){
         if (answer4 == "D") {
             correct++;
         }
-        var messages = ["You're a star!", "You're out of this world!!", "Are you lost in space?"];
         var images = ["assets/images/first.gif", "assets/images/second.gif", "assets/images/third.gif"]
         
         var range;
@@ -61,7 +63,6 @@ $("#startClock").click(function(){
             }
         document.getElementById("after_submit").style.visibility = "visible";
         
-        document.getElementById("message").innerHTML = messages[range];
         document.getElementById("number_correct").innerHTML = "You answered " + correct + " correct.";
         document.getElementById("picture").src = images[range];
     }
